@@ -5,7 +5,7 @@ import AuthForm from '../../components/auth/AuthForm';
 import { check } from '../../modules/user';
 import { useNavigate } from 'react-router-dom';
 
-const RegisterForm = ({ history }) => {
+const RegisterForm = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { form, auth, authError, user } = useSelector(({ auth, user }) => ({
@@ -59,7 +59,7 @@ const RegisterForm = ({ history }) => {
       console.log(user);
       navigate('/');
     }
-  }, [history, user]);
+  }, [user]);
 
   return (
     <AuthForm
