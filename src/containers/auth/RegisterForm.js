@@ -74,6 +74,11 @@ const RegisterForm = () => {
       console.log('check API 성공');
       console.log(user);
       navigate('/');
+      try {
+        localStorage.setItem('user', JSON.stringify(user));
+      } catch (e) {
+        console.log('localStorage is not working');
+      }
     }
   }, [user]);
 
